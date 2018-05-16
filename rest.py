@@ -47,7 +47,7 @@ def send(method='GET', url=None, data=None, headers={}, auth=None):
             # consider the response content as JSON and put it in the dictionary
             try:
                 response_dict = result.json()
-            except ValueError:
+            except ValueError as ve:
                 # no JSON, return the plain result
                 response_dict = result
 
